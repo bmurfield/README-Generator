@@ -24,37 +24,40 @@ function renderLicenseLink(license) {
   } else {
     return "";
   }
- }
+}
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {
-  return license.licenseSection
- }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  const file = 
-    `
-      # ${data.title}
-      ## ${data.description}
-      ## Table of Contents
-        - [Installation](#installation)
-        - [Usage](#usage)
-        - [Credits](#credits)
-        - [License](#license)
-      ## ${data.installation}
-      ## ${data.usage}
-      ## ${data.credits}
-      ## ${data.license}
-      ## ${data.badges}
-      ## ${data.tests}
-      ## Questions
-      [Github](https://github.com/bmurfield).
-      Reach me with addition questions here: [Email](https://bmurfield@gmail.com)
-        
-    `
-  
+  const licenseLink = renderLicenseLink(data.license)
+  const licenseBadge = renderLicenseBadge(data.license)
+
+  const file =
+`
+# ${data.title}
+## ${data.description}
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
+## Installation
+${data.installation}
+## Usage
+${data.usage}
+## Credits
+## ${data.credits}
+## License
+- ${data.license} 
+${licenseLink, licenseBadge}
+## Tests
+${data.tests}
+
+## Questions
+Reach me with additional questions here: [Email](https://bmurfield@gmail.com) or check out my other projects here: [Github](https://github.com/bmurfield)
+`
+
+
   return file;
 }
 
