@@ -6,7 +6,7 @@ A node inquirer app that allows the user to input data that fills out a professi
 
 * Wanted to make a simple program to create readme.md files without having to worry about markdown syntax.
 * Creates a markdown file with proper syntax. Headings, lists, etc.
-* Throughout this project I learned how tp impliment the inquirer program in Node. This was my first project using Node.
+* Throughout this project I learned how to impliment the inquirer program in Node. This was my first project using Node.
 
 
 ## Table of Contents
@@ -18,7 +18,7 @@ A node inquirer app that allows the user to input data that fills out a professi
 
 ## Installation
 
-Install from my github repo
+Files can be cloned from my github repository. To initialize run 'node index' in the terminal and respond to the questions.
 
 ## Usage
 

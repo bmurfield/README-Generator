@@ -1,11 +1,13 @@
-// TODO: Include packages needed for this application
+// These are the packages needed for this application
+// inquirer is used to ask questions in the terminal.
 import inquirer from 'inquirer';
 import fs from 'fs';
 import generateMarkdown from './utils/generateMarkdown.js';
 
+//this is the command to assign a name to your generated file.  
 const fileName = 'GENERATEDREADME.md';
 
-// TODO: Create an array of questions for user input
+//  Array of questions for user input. This info is used to populate the generated README.md file.
 const questions = [
     {
         type: 'input',
@@ -57,13 +59,13 @@ const questions = [
     }
 ];
 
-// TODO: Create a function to write README file
+// function used to write README file
 function writeReadMe(fileName, fileData) {
     fs.writeFile(fileName, fileData, (err) =>
         err ? console.log(err) : console.log('Success!'));
 }
 
-// TODO: Create a function to initialize app
+// function used to initialize app
 function init() {
     inquirer
         .prompt(questions)

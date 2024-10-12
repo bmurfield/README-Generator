@@ -1,5 +1,5 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+// function that returns a license badge based on which license is passed in
+// If there is no license, it returns an empty string
 function renderLicenseBadge(license) {
   if (license === "Apache") {
     return "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
@@ -12,8 +12,8 @@ function renderLicenseBadge(license) {
   }
 
 }
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
+// function that returns the license link
+// If there is no license, it returns an empty string
 function renderLicenseLink(license) {
   if (license !== "None") {
     return "- [License](#license)";
@@ -26,8 +26,8 @@ function renderLicenseLink(license) {
   }
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+// function that returns the license section of README
+// If there is no license, it returns an empty string
 function renderLicenseSection(license) {
   if (license !== "None") {
     return (`License`);
@@ -36,15 +36,15 @@ function renderLicenseSection(license) {
   }
 }
 
-// TODO: Create a function to generate markdown for README
+// function to generate markdown for README
+// the data is pulled from the questions asked when node index is run
+// table of contents links to the other sections of the readme (scrolls down)
+// license info wont populate if "None" is chosen when asked which license was    used
 function generateMarkdown(data) {
-  // const licenseLink = renderLicenseLink(data.license)
-  // const licenseBadge = renderLicenseBadge(data.license)
-
-
   const file =
     `
 # ${data.title}
+${renderLicenseBadge(data.license)}
 ## Description
 ${data.description}
 ## Table of Contents
