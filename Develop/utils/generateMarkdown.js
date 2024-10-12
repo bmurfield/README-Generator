@@ -15,46 +15,57 @@ function renderLicenseBadge(license) {
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  if (license === "Apache") {
-    return "[![License](https://opensource.org/licenses/Apache-2.0)]";
-  } else if (license === "MIT") {
-    return "[![License: MIT](https://opensource.org/licenses/MIT)]";
-  } else if (license === "Boost") {
-    return "[![License](https://www.boost.org/LICENSE_1_0.txt)]";
+  if (license !== "None") {
+    return "- [License](#license)";
+    // } else if (license === "MIT") {
+    //   return "[![License: MIT](https://opensource.org/licenses/MIT)]";
+    // } else if (license === "Boost") {
+    //   return `[${license}](https://www.boost.org/LICENSE_1_0.txt)`;
   } else {
     return "";
   }
 }
 
+// TODO: Create a function that returns the license section of README
+// If there is no license, return an empty string
+function renderLicenseSection(license) {
+  if (license !== "None") {
+    return (`License`);
+  } else {
+    return "";
+  }
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  const licenseLink = renderLicenseLink(data.license)
-  const licenseBadge = renderLicenseBadge(data.license)
+  // const licenseLink = renderLicenseLink(data.license)
+  // const licenseBadge = renderLicenseBadge(data.license)
+
 
   const file =
-`
+    `
 # ${data.title}
-## ${data.description}
+## Description
+${data.description}
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
 - [Credits](#credits)
-- [License](#license)
+${renderLicenseLink(data.license)}
 ## Installation
 ${data.installation}
 ## Usage
 ${data.usage}
 ## Credits
-## ${data.credits}
-## License
-- ${data.license} 
-${licenseLink, licenseBadge}
+${data.credits}
+## ${renderLicenseSection(data.license)}
+${renderLicenseLink(data.license)}
+${renderLicenseBadge(data.license)}
 ## Tests
 ${data.tests}
 
 ## Questions
-Reach me with additional questions here: [Email](https://bmurfield@gmail.com) or check out my other projects here: [Github](https://github.com/bmurfield)
+Reach me with additional questions here: [Email](${data.email}) or check out my other projects here: [Github](${data.github})
 `
 
 

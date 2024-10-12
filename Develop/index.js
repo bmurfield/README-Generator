@@ -37,29 +37,23 @@ const questions = [
         type: 'list',
         name: 'license',
         message: 'What license are you using for this project?',
-        choices: [
-            {
-
-                name: 'Apache',
-            },
-            {
-                name: 'MIT',
-            },
-            {
-                name: 'Boost',
-            },
-
-        ],
+        choices: ['Apache', 'MIT', 'Boost', 'None'],        
     },
-    {
-        type: 'input',
-        name: 'contribution',
-        message: 'Who did you collaborate with on this project?'
-    },
+    
     {
         type: 'input',
         name: 'tests',
         message: 'What is an example of how your application works?'
+    },
+    {
+        type: 'input',
+        name: 'github',
+        message: "Post your github profile link here:"
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'Include your email here:'
     }
 ];
 
@@ -74,7 +68,7 @@ function init() {
     inquirer
         .prompt(questions)
         .then((response) =>
-            writeReadMe( fileName, generateMarkdown(response) )
+            writeReadMe(fileName, generateMarkdown(response))
         )
 }
 
