@@ -30,15 +30,19 @@ Used starter code package from UCF bootcamp program.
 
 
 ## License
+
 MIT License is listed in LICENSE file
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+## Examples
 
+Here is a link to a video of the application in action:
+https://drive.google.com/file/d/1TPyhlGXWn3JdqjgfLQl0GAO54ap0_MNl/view
 
 ## How to Contribute
 
 Reach out to me to collaborate using my [Github](https://github.com/bmurfield) or
-[Email](https://bmurfield@gmail.com)
+email me at bmurfield@gmail.com.
 
 

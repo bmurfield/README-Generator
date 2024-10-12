@@ -17,10 +17,6 @@ function renderLicenseBadge(license) {
 function renderLicenseLink(license) {
   if (license !== "None") {
     return "- [License](#license)";
-    // } else if (license === "MIT") {
-    //   return "[![License: MIT](https://opensource.org/licenses/MIT)]";
-    // } else if (license === "Boost") {
-    //   return `[${license}](https://www.boost.org/LICENSE_1_0.txt)`;
   } else {
     return "";
   }
@@ -39,7 +35,7 @@ function renderLicenseSection(license) {
 // function to generate markdown for README
 // the data is pulled from the questions asked when node index is run
 // table of contents links to the other sections of the readme (scrolls down)
-// license info wont populate if "None" is chosen when asked which license was    used
+// license info wont populate if "None" is chosen when asked which license was used
 function generateMarkdown(data) {
   const file =
     `
@@ -65,7 +61,7 @@ ${renderLicenseBadge(data.license)}
 ${data.tests}
 
 ## Questions
-Reach me with additional questions here: [Email](${data.email}) or check out my other projects here: [Github](${data.github})
+Reach me with additional questions here: ${data.email} or check out my other projects here: [Github](${data.github})
 `
 
 
